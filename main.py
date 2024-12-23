@@ -9,7 +9,7 @@ i2c = I2C(scl=Pin(22), sda=Pin(21))
 sensor = ADXL345_I2C(i2c)
 
 # Schwellenwert für den Sprung (z.B. eine bestimmte Beschleunigung, die als "Sprung" definiert wird)
-JUMP_THRESHOLD = 15  # Empfindlichkeit, kann je nach Bedarf angepasst werden
+JUMP_THRESHOLD = 300  # Empfindlichkeit, kann je nach Bedarf angepasst werden
 
 # Funktion zur Erkennung eines Sprungs
 def detect_jump():
