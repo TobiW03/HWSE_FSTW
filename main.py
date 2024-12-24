@@ -1,6 +1,11 @@
 from machine import I2C, Pin
 import time
 from ADXL345 import ADXL345_I2C
+import network
+
+# Abrufen der MAC-Adresse des ESP32
+mac = network.WLAN(network.STA_IF).config('mac')
+print("MAC-Adresse des ESP32:", ':'.join(['{:02x}'.format(b) for b in mac]))
 
 # Initialisierung des I2C-Busses (GPIO 21 für SDA, GPIO 22 für SCL)
 i2c = I2C(scl=Pin(22), sda=Pin(21))
